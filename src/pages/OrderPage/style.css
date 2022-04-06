@@ -19,6 +19,10 @@
   flex: 1 1 10px;
 }
 
+.orderpage-order-item ol {
+  list-style-position: inside;
+}
+
 .orderpage-button-wrapper {
   height: 20%;
   border: 1px solid purple;
