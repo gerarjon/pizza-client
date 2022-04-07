@@ -1,0 +1,6 @@
+/* Checkbox fix */
+.checkbox + .checkbox,
+.radio + .radio {
+  margin-left: 0.5em
+}
+    
