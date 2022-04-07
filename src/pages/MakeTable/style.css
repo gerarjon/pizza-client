@@ -1,4 +1,4 @@
-.orderpage-wrapper {
+.maketable-wrapper {
   margin: auto;
   margin-top: 1em;
   width: 1000px;
@@ -6,24 +6,24 @@
   border: 2px solid black;
 }
 
-.orderpage-order-list {
+.maketable-order-list {
   height: 80%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
 
-.orderpage-order-item {
+.maketable-order-item {
   border: 1px solid red;
   width: 25%;
   flex: 1 1 10px;
 }
 
-.orderpage-order-item ol {
+.maketable-order-item ol {
   list-style-position: inside;
 }
 
-.orderpage-button-wrapper {
+.maketable-button-wrapper {
   height: 20%;
   border: 1px solid purple;
   display: flex;
