@@ -1,21 +1,19 @@
-import React, { Component } from 'react';
+import React, { useState, useRef, useContext, useEffect } from 'react';
 import Order from "../components/Order";
 
-class OrderList extends Component {
-    state = {
-        orders: [],
-        history: [],
-        historyIndex: 0,
-        historyOn: false
-    }
+const OrderList = () => {
+    const [orders, setOrders] = useState([]);
+    const [history, setHistory] = useState([]);
+    const [historyIndex, setHistoryIndex] = useState(0);
+    const [historyOn, setHistoryOn] = useState(false);
 
     push = (order) => {
         orders.push()
     }
 
     pop = () => {
-        const front = this.state.orders.shift();
-        this.state.history.push(front);
+        const front = orders.shift();
+        history.push(front);
         return front;
     }
 
@@ -23,15 +21,15 @@ class OrderList extends Component {
         if (orders.size() == 0) {
             return null; // or error
         }
-        return this.state.orders[0];
+        return orders[0];
     }
 
     history = () => {
-        return this.state.history[historyIndex];
+        return history[historyIndex];
     }
 
     leftArrow = () => {
-        if (this.state.historyOn) {
+        if (historyOn) {
 
         } else {
 
@@ -39,7 +37,7 @@ class OrderList extends Component {
     }
     
     rightArrow = () => {
-        if (this.state.historyOn) {
+        if (historyOn) {
 
         } else {
             
@@ -47,14 +45,7 @@ class OrderList extends Component {
     }
 
     size = () => {
-        return this.orders.left;
-    }
-
-    render() {
-        return(
-            <Container>
-            </Container>
-        )
+        return orders.left;
     }
 }
 

@@ -1,23 +1,19 @@
-import React, { Component } from 'react';
+import React, { useState, useRef, useContext, useEffect } from 'react';
 import customer from "../components/Customer";
 
-class CustomerNode extends Component {
-    state = {
-        customer: null,
-        next: null
-    }
+const CustomerNode = () => {
+    const [customer, setCustomer] = useState(null);
+    const [next, setNext] = useState(null);
 }
 
-class CustomerList extends Component {
-    state = {
-        customers: [],
-        count: 0,
-        capacity: 47,
-        loadFactor: .4
-    }
+const CustomerList = () => {
+    const [customers, setCustomers] = useState([]);
+    const [count, setCount] = useState(0);
+    const [capacity, setCapacity] = useState(47);
+    const [loadFactor, setLoadFactor] = useState(.4);
 
     initialize = () => {
-        this.setState({customers: []});
+        setCustomers([]);
         for (var i = 0; i < capacity; i++) {
             customers.push(null);
         }
@@ -29,38 +25,38 @@ class CustomerList extends Component {
     }
 
     add = (customer) => {
-        const index = this.hash(customer.state.phoneNumber);
+        const index = hash(customer.phoneNumber);
         var node = new CustomerNode();
-        node.setState({customer: customer});
-        if (this.state.customers[index]) {
-            node.setState({next: this.state.customers[index]});
+        node.setCustomer(customer);
+        if (customers[index]) {
+            node.setNext(customers[index]);
         }
-        this.state.customers[index] = node;
-        this.setState({count: this.state.count + 1});
-        if (this.state.count > this.state.loadFactor * this.state.capacity) {
-            this.rehash();
+        setCustomers(customers.splice(index, 1, node));
+        setCount(count + 1);
+        if (count > loadFactor * capacity) {
+            rehash();
         }
     }
 
     get = (phoneNumber) => {
         const index = hash(phoneNumber);
-        var curr = this.state.customers[index];
+        var curr = customers[index];
         while (curr) {
-            if (curr.state.customer.state.phoneNumber == phoneNumber) {
-                return curr.state.customer;
+            if (curr.customer.phoneNumber == phoneNumber) {
+                return customer;
             }
-            curr = curr.state.next;
+            curr = curr.next;
         }
         return null; // customer not found
     }
 
     nextPrime = (min) => {
         if (min % 2 == 0) {
-            return this.nextPrime(min + 1);
+            return nextPrime(min + 1);
         } else {
             for (var i = 3; i * i < min; i++) {
                 if (min % i == 0) {
-                    return this.nextPrime(min + 2);
+                    return nextPrime(min + 2);
                 }
             }
             return min;
@@ -68,14 +64,14 @@ class CustomerList extends Component {
     }
 
     rehash = () => {
-        const oldCapacity = this.state.capacity;
-        const oldCustomers = this.state.customers;
-        this.setState({capacity: this.nextPrime(oldCapacity * 2)})
-        this.initialize();
+        const oldCapacity = capacity;
+        const oldCustomers = customers;
+        setCapacity(nextPrime(oldCapacity * 2));
+        initialize();
         for (var i = 0; i < oldCapacity; i++) {
-            curr = oldCustomers.state.customers[i];
+            curr = oldCustomers.customers[i];
             while (curr) {
-                this.add(curr.state.customer);
+                add(curr.customer);
             }
         }
     }
