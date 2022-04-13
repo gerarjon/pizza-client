@@ -1,0 +1,29 @@
+{
+  "base": [
+    {
+      "type": "Crust",
+      "options": [
+        "Original Pan Pizza",
+        "Hand Tossed Pizza",
+        "Stuffed Crust Pizza"]
+    },
+    {
+      "type": "Sauce",
+      "options": ["Regular"]
+    },
+    {
+      "type": "Cheese",
+      "options": ["Regular"]
+    }
+  ],
+  "toppings": [
+    { 
+      "type": "Meats",
+      "options": ["Pepperoni, Sausage"]
+    },
+    {
+      "type": "Veggies",
+      "options": ["Mushrooms, Onions, Pineapple"]
+    }
+  ]
+}

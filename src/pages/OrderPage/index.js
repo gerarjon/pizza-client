@@ -1,40 +1,43 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React from 'react';
 import Accordian from '../../components/Accordian';
 import './style.css';
+const pizzaMenu = require('../../utils/pizzaMenu.json');
+
+// Change Key={index} to something else later
 
 const OrderPage = () => {
-  const [order, setOrder] = useState({})
+  // const [order, setOrder] = useState({})
 	
-  const isFirstRender = useRef(true)
-  // For form:
-  // Customer
-  // - name, phone number, address
-  // Menu item
-  // - pizza (with ingredients?)
+  // const isFirstRender = useRef(true)
+  // // For form:
+  // // Customer
+  // // - name, phone number, address
+  // // Menu item
+  // // - pizza (with ingredients?)
   
-  const nameElRef = useRef();
-  const phonenumberElRef = useRef();
-  const addressElRef = useRef();
-  // const pepTopElRef = useRef();
-  // const ssgTopElRef = useRef();
-  // const hamTopElRef = useRef();
-  // const descriptionElRef = useRef()
+  // const nameElRef = useRef();
+  // const phonenumberElRef = useRef();
+  // const addressElRef = useRef();
+  // // const pepTopElRef = useRef();
+  // // const ssgTopElRef = useRef();
+  // // const hamTopElRef = useRef();
+  // // const descriptionElRef = useRef()
 
-  const onSubmitOrder = (event) => {
-    event.preventDefault();
-    const name = nameElRef.current.value;
-    const number = phonenumberElRef.current.value;
-    const address = addressElRef.current.value;
-    // const pep = pepTopElRef.current.value;
-    // const description = descriptionElRef.current.value;
+  // const onSubmitOrder = (event) => {
+  //   event.preventDefault();
+  //   const name = nameElRef.current.value;
+  //   const number = phonenumberElRef.current.value;
+  //   const address = addressElRef.current.value;
+  //   // const pep = pepTopElRef.current.value;
+  //   // const description = descriptionElRef.current.value;
 
-    const data = {
-      name: name,
-      phoneNumber: number,
-      address: address
-    }
-    setOrder(data)
-  }
+  //   const data = {
+  //     name: name,
+  //     phoneNumber: number,
+  //     address: address
+  //   }
+  //   setOrder(data)
+  // }
 
 	
 
@@ -145,17 +148,19 @@ const OrderPage = () => {
 							</div>
 							{/* accordian */}
 							<div className='tabs-confirmation-panes'>
-								<Accordian />
-								<Accordian />
-								
+								{pizzaMenu.base.map((item, index) => (
+									<Accordian 
+										select={item} 
+										key={index}
+									/>
+								))}
 							</div>
 							{/* end accordian */}
-
             </div>
 
 						{/* pizza img and confirmation */}
             <div className='column'>
-              right side
+              Pizza Image
             </div>
           </div>
           
