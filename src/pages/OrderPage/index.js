@@ -1,8 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react';
+import Accordian from '../../components/Accordian';
 import './style.css';
 
 const OrderPage = () => {
   const [order, setOrder] = useState({})
+	
   const isFirstRender = useRef(true)
   // For form:
   // Customer
@@ -34,13 +36,15 @@ const OrderPage = () => {
     setOrder(data)
   }
 
-  useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-      return
-    }
-    console.log(order);
-  },[order]);
+	
+
+  // useEffect(() => {
+  //   if (isFirstRender.current) {
+  //     isFirstRender.current = false;
+  //     return
+  //   }
+  //   console.log(order);
+  // },[order]);
 
   return(
     <>
@@ -48,7 +52,7 @@ const OrderPage = () => {
         <div className='container is-max-desktop'>
           <p className='title'>Make an Order</p>
 
-          <form>
+          {/* <form>
             <div className="field">
               <label className="label">Name</label>
               <p className='control'>
@@ -120,7 +124,40 @@ const OrderPage = () => {
                 </button>
               </div>
             </div>
-          </form>
+          </form> */}
+
+          <div className='columns'>
+						{/* pizza builder */}
+            <div className='column'>
+							<div className='tabs is-boxed tabs-confirmation-link'>
+								<ul>
+									<li className='is-active'>
+										<a>
+											<span>{`CRUST, SAUCE & CHEESE`}</span>
+										</a>
+									</li>
+									<li >
+										<a>
+											<span>TOPPINGS</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							{/* accordian */}
+							<div className='tabs-confirmation-panes'>
+								<Accordian />
+								<Accordian />
+								
+							</div>
+							{/* end accordian */}
+
+            </div>
+
+						{/* pizza img and confirmation */}
+            <div className='column'>
+              right side
+            </div>
+          </div>
           
         </div>
       </section>
