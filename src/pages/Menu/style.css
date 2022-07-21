@@ -1,0 +1,36 @@
+.menu-list-wrapper {
+
+}
+
+.menu-item-wrapper {
+  height: 200px;
+}
+
+.menu-item-content {
+  display:flex;
+  justify-content: space-between;
+}
+
+.menu-item-description {
+
+}
+
+.menu-item-title {
+
+}
+
+.menu-item-image {
+  width: 100px;
+}
+
+.menu-item-title {
+
+}
+
+.menu-item-price {
+
+}
+
+.menu-item-footer {
+
+}
