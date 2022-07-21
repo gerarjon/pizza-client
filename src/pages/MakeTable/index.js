@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.css';
 
 const MakeTable = () => {
@@ -40,6 +40,32 @@ const MakeTable = () => {
       order: ["pizza", "dessert", "pizza", "feet", "feet"]
     },
   ] 
+
+  /** Set index of item to highlight when selecting with arrows.
+   * -1 denotes no item currently selected.
+   * Bump will bump selected item, or first if none is selected
+   **/
+  const [selectedIndex , setSelctedIndex] = useState(-1);
+
+  const bumpEvent = () => {
+    // tag item at index to completed
+    alert("Something was bumped.");
+  }
+
+  const rightEvent = () => {
+    // set orders[selectedIndex] selected state to false
+    // if index < numOrders, search for next incomplete order
+    // set orders[selectedIndex] selected state to true
+    alert("You pressed right arrow.");
+  }
+
+  const leftEvent = () => {
+    // set orders[selectedIndex] selected state to false
+    // if index > 0, setSelectedIndex(selectedIndex - 1);
+    // set orders[selectedIndex] selected state to true
+    alert("You pressed left arrow.");
+  }
+
   return (
     <main>
       <div className='container'>
@@ -78,17 +104,18 @@ const MakeTable = () => {
             
             
           </section>
+
           <section className='maketable-button-wrapper'>
-            <button className='button'>Bump</button>
-            <button className='button'>◀</button>
-            <button className='button'>▶</button>
-            <button className='button'>History</button>
-            <button className='button'>Unbump</button>
+            <button className='button' onClick={leftEvent}>◀</button>
+            <button className='button' onClick={bumpEvent}>Bump</button>
+            <button className='button' onClick={rightEvent}>▶</button>
           </section>
+
         </div>
       </div> 
     </main>
   )
+
 }
 
 export default MakeTable;
