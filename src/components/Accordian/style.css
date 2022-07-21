@@ -6,7 +6,11 @@
 
 .accordian-heading {
   margin-bottom: 1em;
+}
+
+.accordian-heading-title {
   cursor: pointer;
+  text-transform: capitalize;
 }
 
 .is-hidden {

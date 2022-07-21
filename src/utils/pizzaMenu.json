@@ -1,29 +1,37 @@
 {
   "base": [
     {
-      "type": "Crust",
+      "type": "crust",
       "options": [
-        "Original Pan Pizza",
-        "Hand Tossed Pizza",
-        "Stuffed Crust Pizza"]
+        "original pan",
+        "hand tossed",
+        "stuffed crust"]
     },
     {
-      "type": "Sauce",
-      "options": ["Regular"]
+      "type": "sauce",
+      "options": [
+        "regular",
+        "extra", 
+        "no sauce"
+      ]
     },
     {
-      "type": "Cheese",
-      "options": ["Regular"]
+      "type": "cheese",
+      "options": [
+        "regular", 
+        "extra", 
+        "no sauce"
+      ]
     }
   ],
   "toppings": [
     { 
-      "type": "Meats",
-      "options": ["Pepperoni, Sausage"]
+      "type": "meats",
+      "options": ["pepperoni", "sausage"]
     },
     {
-      "type": "Veggies",
-      "options": ["Mushrooms, Onions, Pineapple"]
+      "type": "veggies",
+      "options": ["mushrooms", "onions", "pineapple"]
     }
   ]
 }
