@@ -1,0 +1,37 @@
+{
+  "base": [
+    {
+      "type": "crust",
+      "options": [
+        "original pan",
+        "hand tossed",
+        "stuffed crust"]
+    },
+    {
+      "type": "sauce",
+      "options": [
+        "regular",
+        "extra", 
+        "no sauce"
+      ]
+    },
+    {
+      "type": "cheese",
+      "options": [
+        "regular", 
+        "extra", 
+        "no sauce"
+      ]
+    }
+  ],
+  "toppings": [
+    { 
+      "type": "meats",
+      "options": ["pepperoni", "sausage"]
+    },
+    {
+      "type": "veggies",
+      "options": ["mushrooms", "onions", "pineapple"]
+    }
+  ]
+}

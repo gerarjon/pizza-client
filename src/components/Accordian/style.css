@@ -1,0 +1,18 @@
+.accordian {
+  border: 1px solid rgb(214, 214, 214);
+  border-top: none;
+  padding: 1em;
+}
+
+.accordian-heading {
+  margin-bottom: 1em;
+}
+
+.accordian-heading-title {
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.is-hidden {
+  display: none
+}
