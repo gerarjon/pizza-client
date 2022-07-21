@@ -3,23 +3,18 @@ import CustomerInfo from '../CustomerInfo/index.js';
 import MenuItem from '../MenuItem/index.js';
 
 
-const Order = (props) => {
-
-  const [customer, itemList] = props;
-
-  const listItems = (itemList) => {
-    return itemList.map(item => {
-      return <MenuItem item={item} />
-    })
-  }
-
-  return (
+const Order = ({order}) => {
+  const {customer, itemList, completed, number} = order;
+  return !completed && (
     <div>
+      <h1>{number}</h1>
       <CustomerInfo customer={customer} />
-      {listItems(itemList)}
+      {itemList.map(item => (
+        <MenuItem item={item} />
+      ))}
     </div>
   )
 
 }
 
-export default Home;
+export default Order;

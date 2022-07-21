@@ -1,21 +1,26 @@
 import React from 'react';
 
-const MenuItem = (props) => {
+const MenuItem = ({item}) => {
 
-  const [name, type, ingredientList] = props.item;
+  const {name, type} = item;
 
-  const listIngredients = (ingredientList) => {
-    return ingredientList.map(ingredient => {
-      return <p>{ingredient}</p>
-    })
+  const getIngredients = () => {
+    const toppings = item.toppings;
+    return (
+      <div>
+        {toppings.map(topping => (
+          <p>{topping}</p>
+        ))}
+      </div>
+    )
   }
 
   return (
     <div>
-      <h1><em>({props.count})</em> {name}</h1>
-      {listIngredients(ingredientList)}
+      <h1><em>(1)</em> {name}</h1>
+      {type == "pizza" && getIngredients()}
     </div>
   )
 }
 
-export default Home;
+export default MenuItem;

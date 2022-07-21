@@ -1,50 +1,83 @@
 import React, { useState } from 'react';
+import Order from '../../components/Order/index.js';
 import './style.css';
 
 const MakeTable = () => {
-  const customers = [
-    {
-      name: "customer 1",
-      phoneNumber: "425-777-7777",
-      address: "pants street",
-      order: ["pizza", "dessert"]
-    },
-    {
-      name: "customer 2",
-      phoneNumber: "425-777-7777",
-      address: "pants street 69",
-      order: ["feet"]
-    },
-    {
-      name: "customer 3",
-      phoneNumber: "425-777-7777",
-      address: "pants street",
-      order: ["piss"]
-    },
-    {
-      name: "customer 4",
-      phoneNumber: "425-777-7777",
-      address: "pants islandt",
-      order: ["pizza", "drink"]
-    },
-    {
-      name: "customer 5",
-      phoneNumber: "425-777-7777",
-      address: "mom house street",
-      order: ["pizza", "dessert", "pizza", "pizza"]
-    },
-    {
-      name: "customer 6",
-      phoneNumber: "425-777-7777",
-      address: "dad house mansion bed",
-      order: ["pizza", "dessert", "pizza", "feet", "feet"]
-    },
-  ] 
 
-  /** Set index of item to highlight when selecting with arrows.
-   * -1 denotes no item currently selected.
-   * Bump will bump selected item, or first if none is selected
-   **/
+  // Temporary data for testing
+  const dummyOrderList = [
+    {
+      completed: false,
+      number: 1,
+      customer: {
+        name: "Stephen Strange",
+        phoneNumber: "425-777-7777",
+        address: "123 Fake Street NW",
+        address2: "Hannah, Montana 12345"
+      },
+      itemList: [
+        {
+          name: "Pizza Pizza",
+          type: "pizza",
+          toppings: [
+            "Saucy Sauce",
+            "Cheesy Cheese"
+          ]
+        },
+        {
+          name: "Sahara Dessert",
+          type: "dessert",
+        }
+      ]
+    },
+    {
+      completed: false,
+      number: 2,
+      customer: {
+        name: "Tony Stark",
+        phoneNumber: "425-888-8888",
+        address: "456 Real Street W",
+        address2: "North, West 55555"
+      },
+      itemList: [
+        {
+          name: "Pizza Rolls",
+          type: "pizza",
+          toppings: [
+            "Cheesy Sauce",
+            "Saucy Cheese"
+          ]
+        },
+        {
+          name: "Arabian Dessert",
+          type: "dessert",
+          toppings: []
+        }
+      ]
+    },
+    {
+      completed: true,
+      time: new Date(),
+      number: 3,
+      customer: {
+        name: "James Madison",
+        phoneNumber: "425-911-1212",
+        address: "789 Sureal Street NS",
+        address2: "House, Your 11111"
+      },
+      itemList: [
+        {
+          name: "Fudge Dessert",
+          type: "dessert",
+          toppings: []
+        }
+      ]
+    }
+  ];
+
+  // Set index of item to highlight when selecting with arrows.
+  // -1 denotes no item currently selected.
+  // Bump will bump selected item, or first if none is selected
   const [selectedIndex , setSelctedIndex] = useState(-1);
 
   const bumpEvent = () => {
@@ -71,38 +104,11 @@ const MakeTable = () => {
       <div className='container'>
         <div className='maketable-wrapper'>
           <section className='maketable-order-list'>
-            { customers.map( customer => (
+            {dummyOrderList.map(order => (
               <div className='maketable-order-item'>
-                <ul>
-                  {customer.name}
-                  <li>
-                    Phone Number: {customer.phoneNumber}
-                  </li>
-                  <li>
-                    Address: {customer.address}
-                  </li>
-                  <ol>
-                    Order:
-                    {customer.order.map(item => (
-                      <li>
-                        {item}
-                      </li>
-                    ))}
-                  </ol>
-                </ul>
+                <Order order={order} />
               </div>
             ))}
-            <div className='maketable-order-item'>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, eaque voluptates rem labore beatae sed dignissimos illum! Ipsum nisi distinctio voluptatibus repellat commodi, modi obcaecati at. Et suscipit excepturi dignissimos.
-
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, eaque voluptates rem labore beatae sed
-            </div>
-            
-            <div className='maketable-order-item'>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, eaque voluptates rem labore beatae sed dignissimos illum!
-            </div>
-            
-            
           </section>
 
           <section className='maketable-button-wrapper'>
