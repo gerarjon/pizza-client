@@ -1,17 +1,20 @@
 import React from 'react';
 import CustomerInfo from '../CustomerInfo/index.js';
-import MenuItem from '../MenuItem/index.js';
+import FoodItem from '../FoodItem/index.js';
+import './style.css';
 
 
 const Order = ({order}) => {
   const {customer, itemList, completed, number} = order;
   return !completed && (
-    <div>
-      <h1>{number}</h1>
+    <div className='order-wrapper'>
+      <h1 className='order-count'>{number}</h1>
       <CustomerInfo customer={customer} />
-      {itemList.map(item => (
-        <MenuItem item={item} />
-      ))}
+      <div className='item-list'>
+        {itemList.map(item => (
+          <FoodItem item={item} />
+        ))}
+      </div>
     </div>
   )
 

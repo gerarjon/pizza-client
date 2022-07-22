@@ -1,4 +1,5 @@
 import React from 'react';
+import './style.css';
 
 
 const CustomerInfo = ({customer}) => {
@@ -7,10 +8,12 @@ const CustomerInfo = ({customer}) => {
 
   return (
     <div>
-      <h1>{name}</h1>
-      <p>{phoneNumber}</p>
-      <p>{address}</p>
-      <p>{address2}</p>
+      <p className='customer-name'>{name}</p>
+      <p className='phone-number'>{phoneNumber}</p>
+      <div className='address'>
+        <p>{address}</p>
+        <p>{address2}</p>
+      </div>
     </div>
   )
 

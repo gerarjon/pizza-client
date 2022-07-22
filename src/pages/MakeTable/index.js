@@ -19,9 +19,10 @@ const MakeTable = () => {
         {
           name: "Pizza Pizza",
           type: "pizza",
+          sauce: "Saucy Sauce",
+          cheese: "Cheesy Cheese",
           toppings: [
-            "Saucy Sauce",
-            "Cheesy Cheese"
+            "Anchovies"
           ]
         },
         {
@@ -43,33 +44,50 @@ const MakeTable = () => {
         {
           name: "Pizza Rolls",
           type: "pizza",
+          sauce: "Cheesy Sauce",
+          cheese: "Saucy Cheese",
           toppings: [
-            "Cheesy Sauce",
-            "Saucy Cheese"
+            "One Fish",
+            "Two Fish",
+            "Red Fish",
+            "Blue Fish"
           ]
         },
         {
           name: "Arabian Dessert",
           type: "dessert",
-          toppings: []
         }
       ]
     },
     {
-      completed: true,
-      time: new Date(),
+      completed: false,
       number: 3,
       customer: {
         name: "James Madison",
         phoneNumber: "425-911-1212",
-        address: "789 Sureal Street NS",
+        address: "789 Surreal Street NS",
         address2: "House, Your 11111"
       },
       itemList: [
         {
+          name: "Pizza Long",
+          type: "pizza",
+          sauce: "Cheesy Sauce",
+          cheese: "Saucy Cheese",
+          toppings: [
+            "One Fish", "Two Fish", "One Fish", "Two Fish", "One Fish", "Two Fish",
+            "One Fish", "Two Fish", "One Fish", "Two Fish", "One Fish", "Two Fish",
+            "One Fish", "Two Fish", "One Fish", "Two Fish", "One Fish", "Two Fish",
+            "One Fish", "Two Fish", "One Fish", "Two Fish", "One Fish", "Two Fish",
+            "One Fish", "Two Fish", "One Fish", "Two Fish", "One Fish", "Two Fish",
+            "One Fish", "Two Fish", "One Fish", "Two Fish", "One Fish", "Two Fish",
+            "One Fish", "Two Fish", "One Fish", "Two Fish", "One Fish", "Two Fish",
+            "One Fish", "Two Fish", "One Fish", "Two Fish", "One Fish", "Two Fish",
+          ]
+        },
+        {
           name: "Fudge Dessert",
           type: "dessert",
-          toppings: []
         }
       ]
     }
