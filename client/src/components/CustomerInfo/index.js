@@ -1,18 +1,22 @@
 import React from 'react';
+import './style.css';
 
 
-const CustomerInfo = (props) => {
-  
-  const [name, phoneNumber, address] = props.customer;
+const CustomerInfo = ({customer}) => {
+
+  const {name, phoneNumber, address, address2} = customer;
 
   return (
     <div>
-      <h1>{name}</h1>
-      <p>{phoneNumber}</p>
-      <p>{address}</p>
+      <p className='customer-name'>{name}</p>
+      <p className='phone-number'>{phoneNumber}</p>
+      <div className='address'>
+        <p>{address}</p>
+        <p>{address2}</p>
+      </div>
     </div>
   )
 
 }
 
-export default Home;
+export default CustomerInfo;
