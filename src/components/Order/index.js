@@ -1,25 +1,23 @@
 import React from 'react';
 import CustomerInfo from '../CustomerInfo/index.js';
-import MenuItem from '../MenuItem/index.js';
+import FoodItem from '../FoodItem/index.js';
+import './style.css';
 
 
-const Order = (props) => {
-
-  const [customer, itemList] = props;
-
-  const listItems = (itemList) => {
-    return itemList.map(item => {
-      return <MenuItem item={item} />
-    })
-  }
-
-  return (
-    <div>
+const Order = ({order}) => {
+  const {customer, itemList, completed, number} = order;
+  return !completed && (
+    <div className='order-wrapper'>
+      <h1 className='order-count'>{number}</h1>
       <CustomerInfo customer={customer} />
-      {listItems(itemList)}
+      <div className='item-list'>
+        {itemList.map(item => (
+          <FoodItem item={item} />
+        ))}
+      </div>
     </div>
   )
 
 }
 
-export default Home;
+export default Order;
