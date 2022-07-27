@@ -5,9 +5,7 @@
   background-color: gainsboro;
   display: flex;
   flex-direction: column;
-  font-size: 1rem;
-  height: 100%;
-  width: 10rem;
+  min-width: 10rem;
 }
 
 .side-links>a {

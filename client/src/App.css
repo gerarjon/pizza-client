@@ -1,10 +1,26 @@
 /* Checkbox fix */
+
 .checkbox + .checkbox,
 .radio + .radio {
   margin-left: 0.5em
 }
 
 .under-main-nav {
-  border: 2px solid purple;
   display: flex;
+  height: calc(100% - 4rem);
+  width: 100%;
+}
+
+.main-container {
+  height: 100vh;
+}
+
+.routed-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  vertical-align: center;
+  border: 2px solid orange;
+  height: 100%;
+  width: calc(100% - 10rem);
 }
