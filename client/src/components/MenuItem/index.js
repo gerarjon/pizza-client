@@ -18,4 +18,4 @@ const MenuItem = (props) => {
   )
 }
 
-export default Home;
+export default MenuItem;

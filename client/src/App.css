@@ -3,4 +3,8 @@
 .radio + .radio {
   margin-left: 0.5em
 }
-    
+
+.under-main-nav {
+  border: 2px solid purple;
+  display: flex;
+}
