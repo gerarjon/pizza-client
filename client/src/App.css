@@ -5,7 +5,7 @@
   margin-left: 0.5em
 }
 
-.under-main-nav {
+/* .under-main-nav {
   display: flex;
   height: calc(100% - 4rem);
   width: 100%;
@@ -22,7 +22,7 @@
   vertical-align: center;
   height: 100%;
   width: calc(100% - 10rem);
-}
+} */
 
 #customer-info>h1 {
   font-size: 2rem;

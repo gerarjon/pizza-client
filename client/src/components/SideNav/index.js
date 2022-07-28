@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import './style.css';
 
 const SideNav = () => {
 
   return (
-    <div className='side-links'>
-      <a href='/menu'>Menu</a>
-      <a href='/maketable'>Make Table</a>
-    </div>
+    <nav id="sideNav" className='side-links'>
+      <Link to='/menu'>Menu</Link>
+      <Link to='/maketable'>Make Table</Link>
+    </nav>
   )
 }
 
