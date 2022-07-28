@@ -6,6 +6,7 @@ import MakeTable from './pages/MakeTable';
 import NoPage from './pages/NoPage';
 import Home from './pages/Home';
 import Menu from './pages/Menu';
+import Cart from './pages/Cart';
 import MenuList from './components/MenuList';
 import MainNav from './components/MainNav';
 import SideNav from './components/SideNav';
@@ -21,6 +22,7 @@ function App() {
             <Routes>
                 <Route index element={<Home />} />
                 <Route path="maketable" element={<MakeTable />} />
+                <Route path='cart' element={<Cart />} />
                 <Route path="menu" element={<Menu />}>
                   <Route index element={<MenuList />} />
                   <Route path="build-pizza" element={<BuildPizza />} />

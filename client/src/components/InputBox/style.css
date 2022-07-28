@@ -1,0 +1,12 @@
+.input-box {
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field {
+  background-color: gainsboro;
+  border: 0;
+  margin: .25rem 1rem .25rem 1rem;
+  height: 1.5rem;
+}

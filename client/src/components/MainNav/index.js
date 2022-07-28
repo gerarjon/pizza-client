@@ -6,10 +6,10 @@ const MainNav = () => {
   return (
     <div className='main-nav-body'>
       <section className='home-link'>
-        <a>Pizzathing Home</a>
+        <a href='/'>Pizzathing Home</a>
       </section>
       <section className='user-links'>
-        <a>Cart</a>
+        <a href='/cart'>Cart</a>
         <a>Help?</a>
       </section>
     </div>

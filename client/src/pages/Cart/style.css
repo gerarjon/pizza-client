@@ -1,0 +1,33 @@
+.main-cart-container, .customer-info-fields, .cart-display {
+  height: 100%;
+}
+
+.customer-info-fields, .cart-display {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+.main-cart-container {
+  border: 2px solid green;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.customer-info-fields {
+  border: 2px solid orange;
+}
+
+.cart-display {
+  border: 2px solid purple;
+}
+
+.input-row {
+  display: flex;
+  flex-direction: row;
+}

@@ -5,8 +5,8 @@ const SideNav = () => {
 
   return (
     <div className='side-links'>
-      <a>Menu</a>
-      <a>Make Table</a>
+      <a href='/menu'>Menu</a>
+      <a href='/maketable'>Make Table</a>
     </div>
   )
 }

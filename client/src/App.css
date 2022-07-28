@@ -20,7 +20,11 @@
   flex-direction: column;
   justify-content: center;
   vertical-align: center;
-  border: 2px solid orange;
   height: 100%;
   width: calc(100% - 10rem);
+}
+
+#customer-info>h1 {
+  font-size: 2rem;
+  text-emphasis: bold;
 }
