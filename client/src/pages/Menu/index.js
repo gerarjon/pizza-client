@@ -4,8 +4,6 @@ import './style.css'
 
 const Menu = () => {
   let location = useLocation();
-
-  console.log(location)
   return (
     <section>
       <div className='container is-max-desktop'>
